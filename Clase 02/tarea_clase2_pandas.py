@@ -1,42 +1,49 @@
 import pandas as pd
 import numpy as np
+import os
+
+# Definimos la ruta base del script para encontrar los archivos en la misma carpeta
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ---------------------------------------------------------
 # 1. CARGA DE DATOS DE VENTAS (CSV)
 # ---------------------------------------------------------
 # Cargamos el archivo de ventas y mostramos una vista previa
 try:
-    ventas_df = pd.read_csv('ventas.csv', encoding="ISO-8859-1")
+    path_ventas = os.path.join(BASE_DIR, 'ventas.csv')
+    ventas_df = pd.read_csv(path_ventas, encoding="ISO-8859-1")
     print("--- Punto 1: Vista previa de Ventas ---")
     print(ventas_df.head())
     print("\n")
 except FileNotFoundError:
-    print("Error: El archivo ventas.csv no se encuentra.")
+    print(f"Error: El archivo {path_ventas} no se encuentra.")
 
 # ---------------------------------------------------------
 # 2. CARGA DE DATOS DE CLIENTES (JSON)
 # ---------------------------------------------------------
 # Usamos read_json para importar los datos de clientes
 try:
-    clientes_df = pd.read_json('clientes.json')
+    path_clientes = os.path.join(BASE_DIR, 'clientes.json')
+    clientes_df = pd.read_json(path_clientes)
     print("--- Punto 2: Información de Clientes ---")
     print(f"Cantidad total de clientes: {len(clientes_df)}")
     print("\n")
 except FileNotFoundError:
-    print("Error: El archivo clientes.json no se encuentra.")
+    print(f"Error: El archivo {path_clientes} no se encuentra.")
 
 # ---------------------------------------------------------
 # 3. CARGA DE INVENTARIO (EXCEL) Y ANÁLISIS BÁSICO
 # ---------------------------------------------------------
 # Importamos el inventario desde Excel y calculamos el promedio
 try:
-    inventario_df = pd.read_excel('inventario.xlsx')
+    path_inventario = os.path.join(BASE_DIR, 'inventario.xlsx')
+    inventario_df = pd.read_excel(path_inventario)
     print("--- Punto 3: Análisis de Inventario ---")
     promedio_stock = inventario_df['stock'].mean()
     print(f"El promedio de stock disponible es: {promedio_stock:.2f}")
     print("\n")
 except FileNotFoundError:
-    print("Error: El archivo inventario.xlsx no se encuentra.")
+    print(f"Error: El archivo {path_inventario} no se encuentra.")
 
 # ---------------------------------------------------------
 # EXTRA: COMBINACIÓN DE DATOS (OPCIONAL SEGÚN LA CONSIGNA)
