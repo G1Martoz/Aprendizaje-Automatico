@@ -23,7 +23,7 @@ except FileNotFoundError:
 try:
     path_clientes = os.path.join(BASE_DIR, 'clientes.json')
     clientes_df = pd.read_json(path_clientes)
-    print("--- Punto 2: Información de Clientes ---")
+    print("--- Punto 2: Informacion de Clientes ---")
     print(f"Cantidad total de clientes registrados: {len(clientes_df)}")
     print("\n")
 except FileNotFoundError:
@@ -37,7 +37,7 @@ try:
     # Usamos read_excel para archivos .xlsx
     inventario_df = pd.read_excel(path_inventario) 
     
-    print("--- Punto 3: Análisis de Inventario ---")
+    print("--- Punto 3: Analisis de Inventario ---")
     # Calculamos el promedio de la columna 'stock'
     promedio_stock = inventario_df['stock'].mean()
     print(f"El promedio de stock disponible es: {promedio_stock:.2f}")
