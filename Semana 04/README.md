@@ -1,7 +1,33 @@
-### 🔬 Interpretación visual
+# � Semana 04: Regresión Lineal y Logística
 
-**Análisis de los resultados obtenidos:**
+Este directorio contiene las actividades correspondientes a la cuarta semana del curso, enfocadas en la implementación de modelos de aprendizaje supervisado.
 
-* **Puntuación $R^2$:** El valor obtenido (cercano a 0.95 o 0.96 en este dataset) indica que el modelo tiene un alto poder explicativo. Esto significa que la mayor parte de la variabilidad en los salarios es explicada correctamente por el número de años de experiencia, confirmando la fiabilidad de las predicciones.
+## 🗺️ Guía de Navegación
 
-* **La Recta de Regresión:** La recta representa la predicción del modelo. Para cada año de experiencia en el eje X, la recta nos da el salario estimado en el eje Y. El modelo de regresión lineal simple muestra una correlación muy fuerte entre los años de experiencia y el salario. Con una puntuación $R^2$ de [inserta tu valor], el modelo demuestra ser un predictor robusto. La recta de regresión, calculada mediante el método de mínimos cuadrados, logra capturar la tendencia ascendente de los datos con un error residual mínimo.
+A continuación se detallan los archivos principales y su propósito dentro de la carpeta `Semana 04`:
+
+### 1. Actividad de Regresión Lineal Simple
+*   **Notebook:** [regresion_lineal.ipynb](regresion_lineal.ipynb)
+*   **Dataset:** [Salary_Data.csv](Salary_Data.csv)
+*   **Descripción:** En este ejercicio se predice el salario en función de los años de experiencia.
+*   **Gráfico Correspondiente:** Al final del notebook se encuentra el gráfico de dispersión con la **Recta de Regresión** que visualiza el ajuste del modelo.
+
+### 2. Actividad de Regresión Logística (Clasificación)
+*   **Notebook:** [regresion_logistica.ipynb](regresion_logistica.ipynb)
+*   **Dataset:** [usuarios_win_mac_lin.csv](usuarios_win_mac_lin.csv)
+*   **Descripción:** Modelo de clasificación multiclase (Windows, Mac, Linux) basado en el comportamiento web de los usuarios.
+*   **Gráfico Correspondiente:** Incluye una **Matriz de Confusión de 3x3** para analizar detalladamente los falsos positivos y la precisión del modelo en cada clase.
+
+---
+
+## ⚠️ Casos de Prueba (Ignorables)
+Los siguientes archivos fueron utilizados únicamente como **pruebas piloto** o análisis preliminares y **no forman parte de la entrega final** de la tarea:
+*   [PPiloto.ipynb](PPiloto.ipynb)
+*   [EDA.ipynb](EDA.ipynb)
+
+---
+
+## 🔬 Interpretación de Resultados
+
+*   **Regresión Lineal:** El modelo muestra una correlación muy fuerte entre la experiencia y el salario, con un coeficiente $R^2$ alto que confirma su robustez.
+*   **Regresión Logística:** La matriz de confusión permite identificar visualmente las fronteras de decisión y cómo el modelo separa a los usuarios según su sistema operativo.
